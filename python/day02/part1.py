@@ -24,3 +24,5 @@ for report in reports:
         correct_count += 1
 
 print(correct_count)
+
+assert correct_count == 432
