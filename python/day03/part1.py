@@ -1,6 +1,15 @@
 import re
 
-with open('test_input.txt') as f:
+with open('input.txt') as f:
     memory = f.read()
 
-print(re.match(r"mul\((\d{1,3}),(\d{1,3})\)", memory))
+matches = re.findall(r"mul\((\d{1,3}),(\d{1,3})\)", memory)
+
+result = 0
+for match in matches:
+    a, b = match
+    result += int(a) * int(b)
+
+print(result)
+
+assert result == 182619815
